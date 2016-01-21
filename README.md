@@ -89,4 +89,8 @@ osmosis \
   --read-pbf-fast delaware-latest.osm.pbf \
   --log-progress \
   --write-apidb database=macrocosm
+psql -d macrocosm -c "select setval('changesets_id_seq', (select max(id) from changesets))"
+psql -d macrocosm -c "select setval('current_nodes_id_seq', (select max(node_id) from nodes))"
+psql -d macrocosm -c "select setval('current_ways_id_seq', (select max(way_id) from ways))"
+psql -d macrocosm -c "select setval('current_relations_id_seq', (select max(relation_id) from relations))"
 ```
