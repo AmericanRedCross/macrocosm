@@ -1,3 +1,5 @@
+'use strict';
+
 var winston = require('winston');
 
 // Uncomment to use file logs

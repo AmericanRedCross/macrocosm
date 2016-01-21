@@ -107,8 +107,8 @@ var Way = {
   canBeDeleted: function(way_id) {
     // TODO add relations support
     return new Promise(function(fullfill, reject) {
-      fullfill(true)
-    })
+      fullfill(true);
+    });
   },
 
   attachNodeIDs: function(ways, wayNodes) {
@@ -222,7 +222,7 @@ var Way = {
 
     return Promise.all(raw.map(function(entity) {
       var model = Way.fromEntity(entity, q.meta);
-      return q.transaction(Way.tableName).where({ id: entity.id }).update(model)
+      return q.transaction(Way.tableName).where({ id: entity.id }).update(model);
     }))
 
     // Delete old wayNodes and wayTags
@@ -246,7 +246,7 @@ var Way = {
             way_id: entity.id,
             sequence_id: i,
             node_id: nodeId
-          }
+          };
         }));
         if (entity.tag && entity.tag.length) {
           tags.push(entity.tag.map(function(tag) {
@@ -283,7 +283,7 @@ var Way = {
     .update({ visible: false, changeset_id: q.meta.id }).returning('id')
     .then(function(invisibleWays) {
       q.transaction(WayTag.tableName).whereIn('way_id', invisibleWays).del();
-      return q.transaction(WayNode.tableName).whereIn('way_id', invisibleWays).del()
+      return q.transaction(WayNode.tableName).whereIn('way_id', invisibleWays).del();
     })
     .catch(function(err) {
       log.error('Deleting ways in delete', err);

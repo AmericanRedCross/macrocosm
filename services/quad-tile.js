@@ -1,3 +1,5 @@
+'use strict';
+
 // Converts between lat/lon and quadtile indexing
 // http://wiki.openstreetmap.org/wiki/QuadTiles
 // Based on https://github.com/openstreetmap/openstreetmap-website/blob/master/lib/quad_tile.rb
@@ -40,4 +42,4 @@ module.exports = {
     }
     return tiles;
   }
-}
+};

@@ -1,1 +1,3 @@
-module.exports = 10000000
+'use strict';
+
+module.exports = 10000000;

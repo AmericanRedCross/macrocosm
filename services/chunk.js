@@ -1,3 +1,5 @@
+'use strict';
+
 var log = require('./log.js');
 
 // Module to split an array into nested arrays,

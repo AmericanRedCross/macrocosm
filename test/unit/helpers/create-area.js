@@ -17,13 +17,13 @@ var newArea = function (attributes) {
   }
   this.entity = entity;
   return this;
-}
+};
 
 _.extend(newArea.prototype, Way.prototype, {
   nodes: function (x) {
     if (x) {
       this.entity.nd = x.map(function(node) {
-        return { ref: node.id() }
+        return { ref: node.id() };
       });
       this.entity.nd.push({ ref: x[0].id() });
       return this;

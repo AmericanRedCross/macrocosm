@@ -67,9 +67,9 @@ module.exports.modifyLongWay = function(nodes, way) {
     '<node id="'+ nodes[2] +'" lon="124.15747513734223" lat="10.153431321701245" version="0" changeset="1"/>' +
     '<way id="' + way + '" version="0" changeset="1">' +
       '<nd ref="'+ nodes[0] +'"/>';
-      for (var i = 2; i < 10; i++) {
-        xml += '<nd ref="'+ nodes[i] +'"/>';
-      }
+  for (var i = 2; i < 10; i++) {
+    xml += '<nd ref="'+ nodes[i] +'"/>';
+  }
   xml += '<tag k="highway" v="tertiary"/>' +
     '<tag k="name" v="Common Road Name"/>' +
     '</way>' +
@@ -109,5 +109,5 @@ module.exports.deleteNode = function(id) {
   '<delete if-unused="true">' +
       '<node id="'+ id + '" lon="123.81275264816284" lat="9.626730050553016" version="0" changeset="1"/>' +
   '</delete>' +
-'</osmChange>'
+  '</osmChange>';
 };

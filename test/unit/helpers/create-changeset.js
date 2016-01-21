@@ -13,8 +13,8 @@ function parse(entities) {
     if (entity.get) {
       return entity.get();
     }
-    else return entity
-  })
+    else return entity;
+  });
 }
 
 var newChange = function(obj) {
@@ -26,7 +26,7 @@ var newChange = function(obj) {
 
   this.change = change;
   return this;
-}
+};
 
 newChange.prototype.create = function(type, entities) {
   entities = parse(entities);
@@ -35,7 +35,7 @@ newChange.prototype.create = function(type, entities) {
   }
   else this.change.create[type] = entities;
   return this;
-}
+};
 
 newChange.prototype.modify = function(type, entities) {
   entities = parse(entities);
@@ -44,7 +44,7 @@ newChange.prototype.modify = function(type, entities) {
   }
   else this.change.modify[type] = entities;
   return this;
-}
+};
 
 newChange.prototype.delete = function(type, entities) {
   entities = parse(entities);
@@ -53,11 +53,11 @@ newChange.prototype.delete = function(type, entities) {
   }
   else this.change.delete[type] = entities;
   return this;
-}
+};
 
 newChange.prototype.get = function() {
   return this.change;
-}
+};
 
 newChange.prototype.wipe = function() {
   this.change = {
@@ -65,6 +65,6 @@ newChange.prototype.wipe = function() {
     modify: {},
     delete: {}
   };
-}
+};
 
 module.exports = newChange;

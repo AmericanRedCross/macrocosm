@@ -15,15 +15,15 @@ var newNode = function(attributes) {
   }
   this.entity = entity;
   return this;
-}
+};
 
 newNode.prototype.id = function(x) {
   if (x) {
     this.entity.id = x;
-    return this
+    return this;
   }
   else return this.entity.id;
-}
+};
 
 newNode.prototype.tags = function(x) {
   if (x) {
@@ -31,13 +31,13 @@ newNode.prototype.tags = function(x) {
       this.entity.tag = [];
     }
     this.entity.tag.push(x);
-    return this
+    return this;
   }
   else return this.entity.tag;
-}
+};
 
 newNode.prototype.get = function() {
   return this.entity;
-}
+};
 
 module.exports = newNode;
